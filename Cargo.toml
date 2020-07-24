@@ -1,0 +1,18 @@
+[package]
+name = "hello-world"
+version = "0.1.0"
+authors = ["Wis Chang <wis_chang@trendmicro.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+hyper = "0.13"
+tokio = { version = "0.2", features = ["full"] }
+
+
+[profile.release]
+opt-level = "z"  # Optimize for size.
+lto = true
+codegen-units = 1
+panic = "abort"
